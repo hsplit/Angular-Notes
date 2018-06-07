@@ -1,4 +1,4 @@
-# Angular Notes
+# Angular Notes [Open in browser](https://hsplit.github.io/Angular-Notes/)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 ___
 #### Create project
