@@ -1,0 +1,54 @@
+:host {
+  background: #2B2B2B;
+  color: #BBBBBB;
+}
+.part {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: inline-block;
+  label {
+    cursor: pointer;
+  }
+}
+.green-text {
+  color: forestgreen;
+}
+.yellow-text {
+  color: yellow;
+}
+.blue-text {
+  color: deepskyblue;
+}
+.block {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #4677a6;
+  border: 1px solid #5F9F4D;
+  margin: 5px 0;
+  padding: 3px;
+  white-space: pre-wrap;
+  .html {
+    color: #E7BE5F;
+  }
+  .style {
+    color: #6897BB;
+  }
+  .ts {
+    color: #9876AA;
+  }
+  .result {
+    color: white;
+  }
+  .note {
+    color: #81BF23;
+  }
+  .caption {
+    display: inline-block;
+    width: 120px;
+    margin-top: 3px;
+    color: #BBBBBB;
+    &_first {
+      text-decoration: underline;
+      margin: 0 0 3px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<div>
+  <hr style="background: #f00; height: 2px; border: none;">
+  <div class="block">
+    <div><b class="caption caption_first">@Input</b> @Input() название_входящей_переменной </div>
+    <div class="html"> <b class="caption">HTML parent</b> {{ inputHTMLparent }} </div>
+    <div class="ts"><b class="caption">TS child</b> {{ inputTS }}</div>
+    <div class="html"> <b class="caption">HTML child</b> {{ inputHTMLchild }} </div>
+    <div class="result"><b class="caption">Result</b> <span> Входящая переменная message = {{ message }}</span> </div>
+    <div class="note"><b class="caption">Примечание</b> Если передаваемые данные еще не созданы использовать ngOnInit </div>
+  </div>
+  <div class="block">
+    <div><b class="caption caption_first">*ngIf</b> *ngIf="выражение" </div>
+    <div class="html"><b class="caption">HTML</b> {{ ngIfHTMLcontroll }} <br></div>
+    <div class="html"><b class="caption"></b> {{ ngIfHTML }} <br></div>
+  </div>
+  <div class="block">
+    <div><b class="caption caption_first">*ngFor</b> *ngFor="let item of 'данные'" </div>
+    <div class="html"><b class="caption">HTML</b> {{ ngForHTML }} <br></div>
+    <div class="result"><b class="caption">Result</b>
+      <ul>
+        <li *ngFor="let item of ['one','two','three']">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="block">
+    <div><b class="caption caption_first">@Output</b> @Output() название_события = new EventEmitter() </div>
+    <div class="ts"><b class="caption">TS parent</b> {{ outputTSparent }}</div>
+    <div class="html"> <b class="caption">HTML parent</b> {{ outputHTMLparent }} </div>
+    <div class="ts"><b class="caption">TS child</b> {{ outputTSchild }}</div>
+    <div class="html"> <b class="caption">HTML child</b> {{ outputHTMLchild }} </div>
+    <div class="result"><b class="caption">Result</b>
+      Пойдет наверх после изменения в title: <input type="text" (input)="goOut($event.target.value)">
+    </div>
+  </div>
+  <div class="block">
+    <div><b class="caption caption_first">Double Bind</b> [(ngModel)] = название_поля </div>
+    <div class="ts"><b class="caption">TS</b> {{ localTS }}</div>
+    <div class="html"> <b class="caption">HTML</b> {{ localHTML }} </div>
+    <div class="result"><b class="caption">Result</b>
+      Локальная двусторонняя привязка: <input type="text" [(ngModel)]="localTitle"> {{ localTitle }}
+    </div>
+    <div class="ts"><b class="caption">TS child</b> {{ ioTS }}</div>
+    <div class="html"> <b class="caption">HTML child</b> Двусторонняя привязка наверху title: </div>
+    <div class="html"> <b class="caption"></b> {{ ioHTMLchild }} </div>
+    <div class="html"> <b class="caption">HTML parent</b> {{ ioHTMLparent }} </div>
+    <div class="result"><b class="caption">Result</b>
+      Двусторонняя привязка наверху title:
+      <input type="text" (input)="goOutInput($event.target.value)" [(ngModel)]="titleMy" value="{{ titleMy }}"> {{ titleMy }}
+    </div>
+    <div class="note"><b class="caption">Примечание</b> Опасно для психики! Берегите нервы.</div>
+    <div class="note"><b class="caption"></b> titleMy<span style="color: deepskyblue;">Change</span> - добавленный <span style="color: deepskyblue;">Change</span> для переменной это зарезервированное значение!</div>
+  </div>
+  <div class="block">
+    <div><b class="caption caption_first">ng-content</b> @Input() название_входящей_переменной </div>
+    <div class="html"> <b class="caption">HTML parent</b> {{ ngContentHTMLparent }} </div>
+    <div class="html"> <b class="caption">HTML child</b> {{ ngContentHTMLchild }} </div>
+    <div class="result"><b class="caption">Result</b> <ng-content></ng-content> </div>
+    <div class="note"><b class="caption">Примечание</b> Выбор отдельных элементов если их несколько {{ ngContentHTMLchildCustom }} </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div style="background: #2B2B2B; position: fixed; top: 0; width: 100vw; height: 5px;"></div>
+<div style="border: 1px solid #f00; position: sticky; top: 5px; background: #2B2B2B;">
+  <h1 style="margin: 0;"><b>Welcome to {{ title }}!</b></h1>
+  <img width="50" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <div class="part">
+    <label>Part one <input type="checkbox" #Part1 checked></label>
+  </div>
+  <div class="part">
+    <label>Part two <input type="checkbox" #Part2 checked></label>
+  </div>
+</div>
+<div>
+  <div *ngIf="Part1.checked">
+    <div class="block">
+      <div><b class="caption caption_first">Интерполяция</b> <span>{{</span> выражение <span>}}</span></div>
+      <div class="ts"><b class="caption">TS</b> {{ interpTS }}</div>
+      <div class="html"><b class="caption">HTML</b> {{ interpHTML }}</div>
+      <div class="result"><b class="caption">Result</b> x + 10 = {{ x + 10 }}</div>
+    </div>
+    <div class="block">
+      <div><b class="caption caption_first">Data bind</b> [атрибут] = "выражение" </div>
+      <div class="style"><b class="caption">Style</b> {{ bindStyle }}</div>
+      <div class="ts"><b class="caption">TS</b> {{ bindTS }}</div>
+      <div class="html"><b class="caption">HTML</b> {{ bindHTML }}</div>
+      <div class="result"><b class="caption">Result</b> <span [class]="myClass">Hello</span> </div>
+    </div>
+    <div class="block">
+      <div><b class="caption caption_first">JoyCasino
+        <span [style.opacity]="myClassCasino.length%10/10">♥</span></b>  Data bind + setInterval
+      </div>
+      <div class="style"><b class="caption">Style</b> {{ casinoStyle }}</div>
+      <div class="ts"><b class="caption">TS</b> {{ casinoTS }} </div>
+      <div class="html">
+        <b class="caption">HTML</b> {{ casinoHTML }} <br>
+        <b class="caption"></b> {{ casinoAdditional }}
+      </div>
+      <div class="result"><b class="caption">Result</b><span [class]="myClassCasino">JoyCasino</span></div>
+    </div>
+    <div class="block">
+      <div><b class="caption caption_first">Event</b> (событие) = "выражение" </div>
+      <div class="ts"><b class="caption">TS</b> {{ eventTS }}</div>
+      <div class="html"><b class="caption">HTML</b> {{ eventHTML }}</div>
+      <div class="result"><b class="caption">Result</b> <span (click)="myClick($event)"> Click me!</span> </div>
+      <div class="html"><b class="caption">HTML</b> {{ eventInputHTML }}</div>
+      <div class="result"><b class="caption">Result</b>
+        Color: <input type="text" (input)="$event.target.style.backgroundColor = $event.target.value" value="#E03136">
+      </div>
+    </div>
+    <div class="block">
+      <div><b class="caption caption_first">Ссылки</b> #название </div>
+      <div class="html"><b class="caption">HTML</b> {{ linkHTML }}</div>
+      <div class="result"><b class="caption">Result</b>
+        <span #mySpan> Color: </span>
+        <input type="text" (input)="mySpan.style.color = $event.target.value" value="#E03136">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="Part2.checked">
+    <my-component [message]="'Hello world!'" (newTitleMy)="newTitleApp($event)" [(titleMy)]="title">
+      <H3>Loading...</H3>
+    </my-component>
+  </div>
+</div>
