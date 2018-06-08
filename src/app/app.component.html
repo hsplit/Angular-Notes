@@ -1,15 +1,32 @@
 <div style="background: #2B2B2B; position: fixed; top: 0; width: 100vw; height: 5px;"></div>
 <div style="border: 1px solid #f00; position: sticky; top: 5px; background: #2B2B2B;">
+  <span class="link-source">Source on GitHub: <a href="https://github.com/hsplit/Angular-Notes" target="_blank">https://github.com/hsplit/Angular-Notes</a></span>
   <h1 style="margin: 0;"><b>Welcome to {{ title }}!</b></h1>
   <img width="50" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <div class="part">
+    <label>Read Me<input type="checkbox" #Readme checked></label>
+  </div>
   <div class="part">
     <label>Part one <input type="checkbox" #Part1 checked></label>
   </div>
   <div class="part">
-    <label>Part two <input type="checkbox" #Part2 checked></label>
+    <label>Part two <input type="checkbox" #Part2></label>
+  </div>
+  <div class="part">
+    <label>Part three <input type="checkbox" #Part3></label>
   </div>
 </div>
 <div>
+  <div *ngIf="Readme.checked" class="readme">
+    Source on GitHub: <a href="https://github.com/hsplit/Angular-Notes" target="_blank">https://github.com/hsplit/Angular-Notes</a><br><br>
+    Part1: <span>Интерполяция, data bind, event, link.</span><br>
+    Part2: <span>Component, @Input, *ngIf, *ngFor, @Output, Double Bind - ngModel, ng-content.</span><br>
+    Part3: <span>Directive, exportAs, структурная директива.</span><br><br>
+    Create project: <span>ng new angular-notes --style=scss</span><br>
+    Configure if created without --style: <span>ng set defaults.styleExt scss</span><br>
+    Create component: <span>ng g c my-component</span><br>
+    Create directive: <span>ng g d my-directive</span><br>
+  </div>
   <div *ngIf="Part1.checked">
     <div class="block">
       <div><b class="caption caption_first">Интерполяция</b> <span>{{</span> выражение <span>}}</span></div>
@@ -59,5 +76,41 @@
     <my-component [message]="'Hello world!'" (newTitleMy)="newTitleApp($event)" [(titleMy)]="title">
       <H3>Loading...</H3>
     </my-component>
+  </div>
+  <div *ngIf="Part3.checked">
+    <div class="block">
+      <div><b class="caption caption_first">Directive</b> {{ directiveCaption }}</div>
+      <div class="ts"><b class="caption">TS Bind</b> {{ directiveTSbind }}</div>
+      <div class="ts"><b class="caption">TS Listen</b> {{ directiveTSlisten }}</div>
+      <div class="html"><b class="caption">HTML app</b> {{ directiveHTMLapp }}</div>
+      <div class="result"><b class="caption">Result</b>
+        <span appMyDirective style="user-select: none; cursor: pointer;">Click me and i will change color.</span>
+      </div>
+      <div class="note"><b class="caption">Примечание</b><br>При использовании директивы она создается каждый раз. Т.е. если создать поле count, то оно будет разным в разных местах где применена директива.</div>
+    </div>
+    <div class="block">
+      <div><b class="caption caption_first">Directive export</b> </div>
+      <div class="ts"><b class="caption">TS</b> {{ exportTS }}</div>
+      <div class="html">
+        <b class="caption">HTML app</b> {{ exportHTMLbtn }} <br>
+        <b class="caption"></b> {{ exportHTMLelem }}
+      </div>
+      <div class="result"><b class="caption">Result</b>
+        <button (click)="myDir.myColor='yellow'">Be yellow!</button>
+        <span appMyDirective #myDir="myExport" style="user-select: none; cursor: pointer;"> Click me and i will change color.</span>
+      </div>
+    </div>
+    <div class="block">
+      <div><b class="caption caption_first">*Directive</b> {{ directiveCaptionStruct }}</div>
+      <div class="ts"><b class="caption">TS</b> {{ directiveTSStruct }}</div>
+      <div class="html"><b class="caption">HTML app</b> {{ directiveHTMLappStruct }}</div>
+      <div class="result"><b class="caption">Result</b>
+        <label style="cursor: pointer; text-decoration: underline;">Отрисовано <input type="checkbox" #refresh checked></label>
+        <span *ngIf="refresh.checked">
+          <span *appMyStructDirective>Click me and i will change color.</span>
+        </span>
+      </div>
+      <div class="note"><b class="caption">Примечание</b><br>Директива добавляет отображение с задержкой, чтобы пронаблюдать нужно снять и поставить флаг у "Отрисовано", и с задержкой будет отображен элемент. Можно также передавать параметры через @Input, в HTML это будет записано например так: *appMyStructDirective="параметр"</div>
+    </div>
   </div>
 </div>

@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"background: #2B2B2B; position: fixed; top: 0; width: 100vw; height: 5px;\"></div>\n<div style=\"border: 1px solid #f00; position: sticky; top: 5px; background: #2B2B2B;\">\n  <h1 style=\"margin: 0;\"><b>Welcome to {{ title }}!</b></h1>\n  <img width=\"50\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n  <div class=\"part\">\n    <label>Part one <input type=\"checkbox\" #Part1 checked></label>\n  </div>\n  <div class=\"part\">\n    <label>Part two <input type=\"checkbox\" #Part2 checked></label>\n  </div>\n</div>\n<div>\n  <div *ngIf=\"Part1.checked\">\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Интерполяция</b> <span>{{</span> выражение <span>}}</span></div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ interpTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ interpHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> x + 10 = {{ x + 10 }}</div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Data bind</b> [атрибут] = \"выражение\" </div>\n      <div class=\"style\"><b class=\"caption\">Style</b> {{ bindStyle }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ bindTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ bindHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> <span [class]=\"myClass\">Hello</span> </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">JoyCasino\n        <span [style.opacity]=\"myClassCasino.length%10/10\">♥</span></b>  Data bind + setInterval\n      </div>\n      <div class=\"style\"><b class=\"caption\">Style</b> {{ casinoStyle }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ casinoTS }} </div>\n      <div class=\"html\">\n        <b class=\"caption\">HTML</b> {{ casinoHTML }} <br>\n        <b class=\"caption\"></b> {{ casinoAdditional }}\n      </div>\n      <div class=\"result\"><b class=\"caption\">Result</b><span [class]=\"myClassCasino\">JoyCasino</span></div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Event</b> (событие) = \"выражение\" </div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ eventTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ eventHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> <span (click)=\"myClick($event)\"> Click me!</span> </div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ eventInputHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        Color: <input type=\"text\" (input)=\"$event.target.style.backgroundColor = $event.target.value\" value=\"#E03136\">\n      </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Ссылки</b> #название </div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ linkHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <span #mySpan> Color: </span>\n        <input type=\"text\" (input)=\"mySpan.style.color = $event.target.value\" value=\"#E03136\">\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"Part2.checked\">\n    <my-component [message]=\"'Hello world!'\" (newTitleMy)=\"newTitleApp($event)\" [(titleMy)]=\"title\">\n      <H3>Loading...</H3>\n    </my-component>\n  </div>\n</div>\n"
+module.exports = "<div style=\"background: #2B2B2B; position: fixed; top: 0; width: 100vw; height: 5px;\"></div>\n<div style=\"border: 1px solid #f00; position: sticky; top: 5px; background: #2B2B2B;\">\n  <span class=\"link-source\">Source on GitHub: <a href=\"https://github.com/hsplit/Angular-Notes\" target=\"_blank\">https://github.com/hsplit/Angular-Notes</a></span>\n  <h1 style=\"margin: 0;\"><b>Welcome to {{ title }}!</b></h1>\n  <img width=\"50\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n  <div class=\"part\">\n    <label>Read Me<input type=\"checkbox\" #Readme checked></label>\n  </div>\n  <div class=\"part\">\n    <label>Part one <input type=\"checkbox\" #Part1 checked></label>\n  </div>\n  <div class=\"part\">\n    <label>Part two <input type=\"checkbox\" #Part2></label>\n  </div>\n  <div class=\"part\">\n    <label>Part three <input type=\"checkbox\" #Part3></label>\n  </div>\n</div>\n<div>\n  <div *ngIf=\"Readme.checked\" class=\"readme\">\n    Source on GitHub: <a href=\"https://github.com/hsplit/Angular-Notes\" target=\"_blank\">https://github.com/hsplit/Angular-Notes</a><br><br>\n    Part1: <span>Интерполяция, data bind, event, link.</span><br>\n    Part2: <span>Component, @Input, *ngIf, *ngFor, @Output, Double Bind - ngModel, ng-content.</span><br>\n    Part3: <span>Directive, exportAs, структурная директива.</span><br><br>\n    Create project: <span>ng new angular-notes --style=scss</span><br>\n    Configure if created without --style: <span>ng set defaults.styleExt scss</span><br>\n    Create component: <span>ng g c my-component</span><br>\n    Create directive: <span>ng g d my-directive</span><br>\n  </div>\n  <div *ngIf=\"Part1.checked\">\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Интерполяция</b> <span>{{</span> выражение <span>}}</span></div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ interpTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ interpHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> x + 10 = {{ x + 10 }}</div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Data bind</b> [атрибут] = \"выражение\" </div>\n      <div class=\"style\"><b class=\"caption\">Style</b> {{ bindStyle }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ bindTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ bindHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> <span [class]=\"myClass\">Hello</span> </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">JoyCasino\n        <span [style.opacity]=\"myClassCasino.length%10/10\">♥</span></b>  Data bind + setInterval\n      </div>\n      <div class=\"style\"><b class=\"caption\">Style</b> {{ casinoStyle }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ casinoTS }} </div>\n      <div class=\"html\">\n        <b class=\"caption\">HTML</b> {{ casinoHTML }} <br>\n        <b class=\"caption\"></b> {{ casinoAdditional }}\n      </div>\n      <div class=\"result\"><b class=\"caption\">Result</b><span [class]=\"myClassCasino\">JoyCasino</span></div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Event</b> (событие) = \"выражение\" </div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ eventTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ eventHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> <span (click)=\"myClick($event)\"> Click me!</span> </div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ eventInputHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        Color: <input type=\"text\" (input)=\"$event.target.style.backgroundColor = $event.target.value\" value=\"#E03136\">\n      </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Ссылки</b> #название </div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ linkHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <span #mySpan> Color: </span>\n        <input type=\"text\" (input)=\"mySpan.style.color = $event.target.value\" value=\"#E03136\">\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"Part2.checked\">\n    <my-component [message]=\"'Hello world!'\" (newTitleMy)=\"newTitleApp($event)\" [(titleMy)]=\"title\">\n      <H3>Loading...</H3>\n    </my-component>\n  </div>\n  <div *ngIf=\"Part3.checked\">\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Directive</b> {{ directiveCaption }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS Bind</b> {{ directiveTSbind }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS Listen</b> {{ directiveTSlisten }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML app</b> {{ directiveHTMLapp }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <span appMyDirective style=\"user-select: none; cursor: pointer;\">Click me and i will change color.</span>\n      </div>\n      <div class=\"note\"><b class=\"caption\">Примечание</b><br>При использовании директивы она создается каждый раз. Т.е. если создать поле count, то оно будет разным в разных местах где применена директива.</div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Directive export</b> </div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ exportTS }}</div>\n      <div class=\"html\">\n        <b class=\"caption\">HTML app</b> {{ exportHTMLbtn }} <br>\n        <b class=\"caption\"></b> {{ exportHTMLelem }}\n      </div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <button (click)=\"myDir.myColor='yellow'\">Be yellow!</button>\n        <span appMyDirective #myDir=\"myExport\" style=\"user-select: none; cursor: pointer;\"> Click me and i will change color.</span>\n      </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">*Directive</b> {{ directiveCaptionStruct }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ directiveTSStruct }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML app</b> {{ directiveHTMLappStruct }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <label style=\"cursor: pointer; text-decoration: underline;\">Отрисовано <input type=\"checkbox\" #refresh checked></label>\n        <span *ngIf=\"refresh.checked\">\n          <span *appMyStructDirective>Click me and i will change color.</span>\n        </span>\n      </div>\n      <div class=\"note\"><b class=\"caption\">Примечание</b><br>Директива добавляет отображение с задержкой, чтобы пронаблюдать нужно снять и поставить флаг у \"Отрисовано\", и с задержкой будет отображен элемент. Можно также передавать параметры через @Input, в HTML это будет записано например так: *appMyStructDirective=\"параметр\"</div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "<div style=\"background: #2B2B2B; position: fixed; top: 0; wid
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  background: #2B2B2B;\n  color: #BBBBBB; }\n\n.part {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  display: inline-block; }\n\n.part label {\n    cursor: pointer; }\n\n.green-text {\n  color: forestgreen; }\n\n.yellow-text {\n  color: yellow; }\n\n.blue-text {\n  color: deepskyblue; }\n\n.block {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 14px;\n  color: #4677a6;\n  border: 1px solid #5F9F4D;\n  margin: 5px 0;\n  padding: 3px;\n  white-space: pre-wrap; }\n\n.block .html {\n    color: #E7BE5F; }\n\n.block .style {\n    color: #6897BB; }\n\n.block .ts {\n    color: #9876AA; }\n\n.block .result {\n    color: white; }\n\n.block .note {\n    color: #81BF23; }\n\n.block .caption {\n    display: inline-block;\n    width: 120px;\n    margin-top: 3px;\n    color: #BBBBBB; }\n\n.block .caption_first {\n      text-decoration: underline;\n      margin: 0 0 3px; }\n"
+module.exports = ":host {\n  background: #2B2B2B;\n  color: #BBBBBB; }\n\n.link-source {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  float: right;\n  margin: 2px 5px; }\n\n.link-source a {\n    color: #BBBBBB; }\n\n.readme {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  padding: 5px;\n  color: #E7BE5F; }\n\n.readme a {\n    color: #BBBBBB; }\n\n.readme span {\n    color: #BBBBBB; }\n\n.part {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  display: inline-block;\n  margin: 0 5px; }\n\n.part label {\n    cursor: pointer; }\n\n.part label:hover {\n      text-decoration: underline; }\n\n.part label input {\n      cursor: pointer; }\n\n.green-text {\n  color: forestgreen; }\n\n.yellow-text {\n  color: yellow; }\n\n.blue-text {\n  color: deepskyblue; }\n\n.block {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 14px;\n  color: #4677a6;\n  border: 1px solid #5F9F4D;\n  margin: 5px 0;\n  padding: 3px;\n  white-space: pre-wrap; }\n\n.block .html {\n    color: #E7BE5F; }\n\n.block .style {\n    color: #6897BB; }\n\n.block .ts {\n    color: #9876AA; }\n\n.block .result {\n    color: white; }\n\n.block .note {\n    color: #81BF23; }\n\n.block .caption {\n    display: inline-block;\n    width: 120px;\n    margin-top: 3px;\n    color: #BBBBBB; }\n\n.block .caption_first {\n      text-decoration: underline;\n      margin: 0 0 3px; }\n"
 
 /***/ }),
 
@@ -87,6 +87,17 @@ var AppComponent = /** @class */ (function () {
         this.eventHTML = '<span (click)="myClick($event)">Click me!</span>';
         this.eventInputHTML = "Color: <input type=\"text\" (input)=\"$event.target.style.backgroundColor = $event.target.value\">";
         this.linkHTML = "<span #mySpan>Color: </span><input type=\"text\" (input)=\"mySpan.style.color = $event.target.value\">";
+        // Part 3 -------------------------------------------------------------
+        this.directiveCaption = "@Directive ({ selector: '[appMyDirective]' })";
+        this.directiveTSbind = "\n  export class MyDirectiveDirective {\n    @HostBinding('style.color') myColor: string;\n  \n    constructor() {\n      this.myColor = 'pink';\n    }\n  }";
+        this.directiveTSlisten = "\n  @HostListener('click', ['$event']) changeColor(event) {\n    this.myColor = this.myColor === 'pink' ? '#289FDB' : 'pink';\n  }";
+        this.directiveHTMLapp = "<span appMyDirective>I will pink</span>";
+        this.directiveCaptionStruct = "@Directive({ selector: '[appMyStructDirective]' })";
+        this.directiveTSStruct = "\n  export class MyStructDirectiveDirective {\n\n    constructor(\n      private template: TemplateRef<any>,\n      private view: ViewContainerRef\n    ) {\n      this.delay();\n    }\n    delay() {\n      setTimeout( () => this.view.createEmbeddedView(this.template), 2000);\n    }\n  }";
+        this.directiveHTMLappStruct = "<span *appMyStructDirective>Click me and i will change color.</span>";
+        this.exportTS = "\n  @Directive({\n    selector: '[appMyDirective]',\n    exportAs: 'myExport'\n  })";
+        this.exportHTMLbtn = "<button (click)=\"myDir.myColor='yellow'\">Be yellow!</button>";
+        this.exportHTMLelem = "<span appMyDirective #myDir=\"myExport\">Click me and i will change color.</span>";
         setInterval(function () {
             _this.myClassCasino = _this.myClassCasino === 'blue-text' ? 'yellow-text' : 'blue-text';
         }, 500);
@@ -127,12 +138,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _components_my_component_my_component_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/my-component/my-component.component */ "./src/app/components/my-component/my-component.component.ts");
+/* harmony import */ var _directives_my_directive_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./directives/my-directive.directive */ "./src/app/directives/my-directive.directive.ts");
+/* harmony import */ var _directives_my_struct_directive_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./directives/my-struct-directive.directive */ "./src/app/directives/my-struct-directive.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -145,7 +160,9 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
-                _components_my_component_my_component_component__WEBPACK_IMPORTED_MODULE_4__["MyComponentComponent"]
+                _components_my_component_my_component_component__WEBPACK_IMPORTED_MODULE_4__["MyComponentComponent"],
+                _directives_my_directive_directive__WEBPACK_IMPORTED_MODULE_5__["MyDirectiveDirective"],
+                _directives_my_struct_directive_directive__WEBPACK_IMPORTED_MODULE_6__["MyStructDirectiveDirective"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
@@ -179,7 +196,7 @@ module.exports = "<div>\n  <hr style=\"background: #f00; height: 2px; border: no
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  background: #2B2B2B;\n  color: #BBBBBB; }\n\n.part {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  display: inline-block; }\n\n.part label {\n    cursor: pointer; }\n\n.green-text {\n  color: forestgreen; }\n\n.yellow-text {\n  color: yellow; }\n\n.blue-text {\n  color: deepskyblue; }\n\n.block {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 14px;\n  color: #4677a6;\n  border: 1px solid #5F9F4D;\n  margin: 5px 0;\n  padding: 3px;\n  white-space: pre-wrap; }\n\n.block .html {\n    color: #E7BE5F; }\n\n.block .style {\n    color: #6897BB; }\n\n.block .ts {\n    color: #9876AA; }\n\n.block .result {\n    color: white; }\n\n.block .note {\n    color: #81BF23; }\n\n.block .caption {\n    display: inline-block;\n    width: 120px;\n    margin-top: 3px;\n    color: #BBBBBB; }\n\n.block .caption_first {\n      text-decoration: underline;\n      margin: 0 0 3px; }\n"
+module.exports = ":host {\n  background: #2B2B2B;\n  color: #BBBBBB; }\n\n.link-source {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  float: right;\n  margin: 2px 5px; }\n\n.link-source a {\n    color: #BBBBBB; }\n\n.readme {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  padding: 5px;\n  color: #E7BE5F; }\n\n.readme a {\n    color: #BBBBBB; }\n\n.readme span {\n    color: #BBBBBB; }\n\n.part {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  display: inline-block;\n  margin: 0 5px; }\n\n.part label {\n    cursor: pointer; }\n\n.part label:hover {\n      text-decoration: underline; }\n\n.part label input {\n      cursor: pointer; }\n\n.green-text {\n  color: forestgreen; }\n\n.yellow-text {\n  color: yellow; }\n\n.blue-text {\n  color: deepskyblue; }\n\n.block {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 14px;\n  color: #4677a6;\n  border: 1px solid #5F9F4D;\n  margin: 5px 0;\n  padding: 3px;\n  white-space: pre-wrap; }\n\n.block .html {\n    color: #E7BE5F; }\n\n.block .style {\n    color: #6897BB; }\n\n.block .ts {\n    color: #9876AA; }\n\n.block .result {\n    color: white; }\n\n.block .note {\n    color: #81BF23; }\n\n.block .caption {\n    display: inline-block;\n    width: 120px;\n    margin-top: 3px;\n    color: #BBBBBB; }\n\n.block .caption_first {\n      text-decoration: underline;\n      margin: 0 0 3px; }\n"
 
 /***/ }),
 
@@ -264,6 +281,103 @@ var MyComponentComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/directives/my-directive.directive.ts":
+/*!******************************************************!*\
+  !*** ./src/app/directives/my-directive.directive.ts ***!
+  \******************************************************/
+/*! exports provided: MyDirectiveDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyDirectiveDirective", function() { return MyDirectiveDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MyDirectiveDirective = /** @class */ (function () {
+    function MyDirectiveDirective() {
+        this.myColor = 'pink';
+    }
+    MyDirectiveDirective.prototype.changeColor = function (event) {
+        this.myColor = this.myColor === 'pink' ? '#289FDB' : 'pink';
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.color'),
+        __metadata("design:type", String)
+    ], MyDirectiveDirective.prototype, "myColor", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('click', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], MyDirectiveDirective.prototype, "changeColor", null);
+    MyDirectiveDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appMyDirective]',
+            exportAs: 'myExport'
+        }),
+        __metadata("design:paramtypes", [])
+    ], MyDirectiveDirective);
+    return MyDirectiveDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/directives/my-struct-directive.directive.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/directives/my-struct-directive.directive.ts ***!
+  \*************************************************************/
+/*! exports provided: MyStructDirectiveDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyStructDirectiveDirective", function() { return MyStructDirectiveDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MyStructDirectiveDirective = /** @class */ (function () {
+    function MyStructDirectiveDirective(template, view) {
+        this.template = template;
+        this.view = view;
+        this.delay();
+    }
+    MyStructDirectiveDirective.prototype.delay = function () {
+        var _this = this;
+        setTimeout(function () { return _this.view.createEmbeddedView(_this.template); }, 2000);
+    };
+    MyStructDirectiveDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appMyStructDirective]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["TemplateRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"]])
+    ], MyStructDirectiveDirective);
+    return MyStructDirectiveDirective;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -324,7 +438,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\anewf\angular-notes\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Angular-Notes\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -56,4 +56,44 @@ export class AppComponent {
   myClick(e) {
     alert('timeStamp = ' + e.timeStamp);
   }
+
+  // Part 3 -------------------------------------------------------------
+  directiveCaption = `@Directive ({ selector: '[appMyDirective]' })`;
+  directiveTSbind = `
+  export class MyDirectiveDirective {
+    @HostBinding('style.color') myColor: string;
+  
+    constructor() {
+      this.myColor = 'pink';
+    }
+  }`;
+  directiveTSlisten = `
+  @HostListener('click', ['$event']) changeColor(event) {
+    this.myColor = this.myColor === 'pink' ? '#289FDB' : 'pink';
+  }`;
+  directiveHTMLapp = `<span appMyDirective>I will pink</span>`;
+
+  directiveCaptionStruct = `@Directive({ selector: '[appMyStructDirective]' })`;
+  directiveTSStruct = `
+  export class MyStructDirectiveDirective {
+
+    constructor(
+      private template: TemplateRef<any>,
+      private view: ViewContainerRef
+    ) {
+      this.delay();
+    }
+    delay() {
+      setTimeout( () => this.view.createEmbeddedView(this.template), 2000);
+    }
+  }`;
+  directiveHTMLappStruct = `<span *appMyStructDirective>Click me and i will change color.</span>`;
+
+  exportTS = `
+  @Directive({
+    selector: '[appMyDirective]',
+    exportAs: 'myExport'
+  })`;
+  exportHTMLbtn = `<button (click)="myDir.myColor='yellow'">Be yellow!</button>`;
+  exportHTMLelem = `<span appMyDirective #myDir="myExport">Click me and i will change color.</span>`;
 }
