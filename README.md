@@ -1,11 +1,10 @@
 # Angular Notes [Open in browser](https://hsplit.github.io/Angular-Notes/)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
-Part1: интерполяция {{}}, data bind []="", event ()="", link #.
-
+Part1: Интерполяция {{}}, data bind []="", event ()="", link #.
 Part2: Component, @Input, *ngIf, *ngFor, @Output, Double Bind [(ngModel)], ng-content.
-
 Part3: Directive, exportAs, структурная директива.
+Part4: Service, HttpClientModule.
 ___
 #### Create project
 [Using Sass with the Angular CLI](https://scotch.io/tutorials/using-sass-with-the-angular-cli)
@@ -15,6 +14,20 @@ ng new angular-notes --style=scss
 Configure if created without --style
 ```bash
 ng set defaults.styleExt scss
+```
+Or edit file **angular.json**
+```json
+{
+  "projects": {
+    "name-project": {
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    }
+  }
+}
 ```
 ___
 #### Create component
@@ -28,3 +41,9 @@ ___
 ng g d my-directive
 ```
 Check *import* and *declarations* in **app.module.ts**
+___
+#### Create service
+```bash
+ng g s my-data
+```
+Check *import* and *providers* in **app.module.ts**

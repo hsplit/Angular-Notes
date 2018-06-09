@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MyComponentComponent } from './components/my-component/my-component.component';
 import { MyDirectiveDirective } from './directives/my-directive.directive';
 import { MyStructDirectiveDirective } from './directives/my-struct-directive.directive';
+import { MyDataService } from './services/my-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,9 +17,9 @@ import { MyStructDirectiveDirective } from './directives/my-struct-directive.dir
     MyStructDirectiveDirective
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [MyDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

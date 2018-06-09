@@ -15,17 +15,25 @@
   <div class="part">
     <label>Part three <input type="checkbox" #Part3></label>
   </div>
+  <div class="part">
+    <label>Part four <input type="checkbox" #Part4></label>
+  </div>
 </div>
 <div>
   <div *ngIf="Readme.checked" class="readme">
     Source on GitHub: <a href="https://github.com/hsplit/Angular-Notes" target="_blank">https://github.com/hsplit/Angular-Notes</a><br><br>
     Part1: <span>Интерполяция, data bind, event, link.</span><br>
     Part2: <span>Component, @Input, *ngIf, *ngFor, @Output, Double Bind - ngModel, ng-content.</span><br>
-    Part3: <span>Directive, exportAs, структурная директива.</span><br><br>
+    Part3: <span>Directive, exportAs, структурная директива.</span><br>
+    Part4: <span>Service, HttpClientModule.</span><br>
+    <br>
     Create project: <span>ng new angular-notes --style=scss</span><br>
     Configure if created without --style: <span>ng set defaults.styleExt scss</span><br>
+    Or edit file **angular.json**: <span>example in <a href="https://github.com/hsplit/Angular-Notes">readme.md</a></span><br>
+    <br>
     Create component: <span>ng g c my-component</span><br>
     Create directive: <span>ng g d my-directive</span><br>
+    Create service: <span>ng g s my-data</span>
   </div>
   <div *ngIf="Part1.checked">
     <div class="block">
@@ -107,10 +115,35 @@
       <div class="result"><b class="caption">Result</b>
         <label style="cursor: pointer; text-decoration: underline;">Отрисовано <input type="checkbox" #refresh checked></label>
         <span *ngIf="refresh.checked">
-          <span *appMyStructDirective>Click me and i will change color.</span>
+          <span *appMyStructDirective>Текст, который появляется с запозданием.</span>
         </span>
       </div>
-      <div class="note"><b class="caption">Примечание</b><br>Директива добавляет отображение с задержкой, чтобы пронаблюдать нужно снять и поставить флаг у "Отрисовано", и с задержкой будет отображен элемент. Можно также передавать параметры через @Input, в HTML это будет записано например так: *appMyStructDirective="параметр"</div>
+      <div class="note"><b class="caption">Примечание</b><br>Директива добавляет отображение с задержкой, чтобы пронаблюдать нужно снять и поставить флаг у "Отрисовано", и с задержкой будет отображен элемент. Можно также передавать параметры через @Input, в HTML это будет записано например так: *appMyStructDirective="параметр".</div>
+    </div>
+  </div>
+  <div *ngIf="Part4.checked">
+    <div class="block">
+      <div><b class="caption caption_first">Service</b> {{ serviceTSmodule }}</div>
+      <div class="ts"><b class="caption">TS service</b> {{ serviceTS }}</div>
+      <div class="ts"><b class="caption">TS app.comp</b> {{ serviceTSapp }}</div>
+      <div class="html"><b class="caption">HTML</b> {{ serviceHTMLapp1 }}</div>
+      <div class="html"><b class="caption"></b> {{ serviceHTMLapp2 }}</div>
+      <div class="result"><b class="caption">Result</b>
+        Words from dataService: <span *ngFor="let item of getAllWords()">{{ item.word }} </span>
+      </div>
+      <div class="result"><b class="caption"></b>
+        Нажать Enter для добавления слова в сервис:
+        <input type="text" (keyup.enter)="addWord($event.target.value)">
+      </div>
+    </div>
+    <div class="block">
+      <div><b class="caption caption_first">HttpClientModule</b> {{ httpTSmodule }}</div>
+      <div class="ts"><b class="caption">TS service</b> {{ serviceTShttp }}</div>
+      <div class="ts"><b class="caption">TS app.comp</b> {{ serviceTSapphttp }}</div>
+      <div class="html"><b class="caption">HTML</b> {{ serviceHTMLapphttp }}</div>
+      <div class="result"><b class="caption">Result</b>
+        Data from Http: <span *ngFor="let item of getDataHttp()">{{ item }} </span>
+      </div>
     </div>
   </div>
 </div>

@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"background: #2B2B2B; position: fixed; top: 0; width: 100vw; height: 5px;\"></div>\n<div style=\"border: 1px solid #f00; position: sticky; top: 5px; background: #2B2B2B;\">\n  <span class=\"link-source\">Source on GitHub: <a href=\"https://github.com/hsplit/Angular-Notes\" target=\"_blank\">https://github.com/hsplit/Angular-Notes</a></span>\n  <h1 style=\"margin: 0;\"><b>Welcome to {{ title }}!</b></h1>\n  <img width=\"50\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n  <div class=\"part\">\n    <label>Read Me<input type=\"checkbox\" #Readme checked></label>\n  </div>\n  <div class=\"part\">\n    <label>Part one <input type=\"checkbox\" #Part1 checked></label>\n  </div>\n  <div class=\"part\">\n    <label>Part two <input type=\"checkbox\" #Part2></label>\n  </div>\n  <div class=\"part\">\n    <label>Part three <input type=\"checkbox\" #Part3></label>\n  </div>\n</div>\n<div>\n  <div *ngIf=\"Readme.checked\" class=\"readme\">\n    Source on GitHub: <a href=\"https://github.com/hsplit/Angular-Notes\" target=\"_blank\">https://github.com/hsplit/Angular-Notes</a><br><br>\n    Part1: <span>Интерполяция, data bind, event, link.</span><br>\n    Part2: <span>Component, @Input, *ngIf, *ngFor, @Output, Double Bind - ngModel, ng-content.</span><br>\n    Part3: <span>Directive, exportAs, структурная директива.</span><br><br>\n    Create project: <span>ng new angular-notes --style=scss</span><br>\n    Configure if created without --style: <span>ng set defaults.styleExt scss</span><br>\n    Create component: <span>ng g c my-component</span><br>\n    Create directive: <span>ng g d my-directive</span><br>\n  </div>\n  <div *ngIf=\"Part1.checked\">\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Интерполяция</b> <span>{{</span> выражение <span>}}</span></div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ interpTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ interpHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> x + 10 = {{ x + 10 }}</div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Data bind</b> [атрибут] = \"выражение\" </div>\n      <div class=\"style\"><b class=\"caption\">Style</b> {{ bindStyle }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ bindTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ bindHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> <span [class]=\"myClass\">Hello</span> </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">JoyCasino\n        <span [style.opacity]=\"myClassCasino.length%10/10\">♥</span></b>  Data bind + setInterval\n      </div>\n      <div class=\"style\"><b class=\"caption\">Style</b> {{ casinoStyle }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ casinoTS }} </div>\n      <div class=\"html\">\n        <b class=\"caption\">HTML</b> {{ casinoHTML }} <br>\n        <b class=\"caption\"></b> {{ casinoAdditional }}\n      </div>\n      <div class=\"result\"><b class=\"caption\">Result</b><span [class]=\"myClassCasino\">JoyCasino</span></div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Event</b> (событие) = \"выражение\" </div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ eventTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ eventHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> <span (click)=\"myClick($event)\"> Click me!</span> </div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ eventInputHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        Color: <input type=\"text\" (input)=\"$event.target.style.backgroundColor = $event.target.value\" value=\"#E03136\">\n      </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Ссылки</b> #название </div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ linkHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <span #mySpan> Color: </span>\n        <input type=\"text\" (input)=\"mySpan.style.color = $event.target.value\" value=\"#E03136\">\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"Part2.checked\">\n    <my-component [message]=\"'Hello world!'\" (newTitleMy)=\"newTitleApp($event)\" [(titleMy)]=\"title\">\n      <H3>Loading...</H3>\n    </my-component>\n  </div>\n  <div *ngIf=\"Part3.checked\">\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Directive</b> {{ directiveCaption }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS Bind</b> {{ directiveTSbind }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS Listen</b> {{ directiveTSlisten }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML app</b> {{ directiveHTMLapp }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <span appMyDirective style=\"user-select: none; cursor: pointer;\">Click me and i will change color.</span>\n      </div>\n      <div class=\"note\"><b class=\"caption\">Примечание</b><br>При использовании директивы она создается каждый раз. Т.е. если создать поле count, то оно будет разным в разных местах где применена директива.</div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Directive export</b> </div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ exportTS }}</div>\n      <div class=\"html\">\n        <b class=\"caption\">HTML app</b> {{ exportHTMLbtn }} <br>\n        <b class=\"caption\"></b> {{ exportHTMLelem }}\n      </div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <button (click)=\"myDir.myColor='yellow'\">Be yellow!</button>\n        <span appMyDirective #myDir=\"myExport\" style=\"user-select: none; cursor: pointer;\"> Click me and i will change color.</span>\n      </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">*Directive</b> {{ directiveCaptionStruct }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ directiveTSStruct }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML app</b> {{ directiveHTMLappStruct }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <label style=\"cursor: pointer; text-decoration: underline;\">Отрисовано <input type=\"checkbox\" #refresh checked></label>\n        <span *ngIf=\"refresh.checked\">\n          <span *appMyStructDirective>Click me and i will change color.</span>\n        </span>\n      </div>\n      <div class=\"note\"><b class=\"caption\">Примечание</b><br>Директива добавляет отображение с задержкой, чтобы пронаблюдать нужно снять и поставить флаг у \"Отрисовано\", и с задержкой будет отображен элемент. Можно также передавать параметры через @Input, в HTML это будет записано например так: *appMyStructDirective=\"параметр\"</div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div style=\"background: #2B2B2B; position: fixed; top: 0; width: 100vw; height: 5px;\"></div>\n<div style=\"border: 1px solid #f00; position: sticky; top: 5px; background: #2B2B2B;\">\n  <span class=\"link-source\">Source on GitHub: <a href=\"https://github.com/hsplit/Angular-Notes\" target=\"_blank\">https://github.com/hsplit/Angular-Notes</a></span>\n  <h1 style=\"margin: 0;\"><b>Welcome to {{ title }}!</b></h1>\n  <img width=\"50\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n  <div class=\"part\">\n    <label>Read Me<input type=\"checkbox\" #Readme checked></label>\n  </div>\n  <div class=\"part\">\n    <label>Part one <input type=\"checkbox\" #Part1 checked></label>\n  </div>\n  <div class=\"part\">\n    <label>Part two <input type=\"checkbox\" #Part2></label>\n  </div>\n  <div class=\"part\">\n    <label>Part three <input type=\"checkbox\" #Part3></label>\n  </div>\n  <div class=\"part\">\n    <label>Part four <input type=\"checkbox\" #Part4></label>\n  </div>\n</div>\n<div>\n  <div *ngIf=\"Readme.checked\" class=\"readme\">\n    Source on GitHub: <a href=\"https://github.com/hsplit/Angular-Notes\" target=\"_blank\">https://github.com/hsplit/Angular-Notes</a><br><br>\n    Part1: <span>Интерполяция, data bind, event, link.</span><br>\n    Part2: <span>Component, @Input, *ngIf, *ngFor, @Output, Double Bind - ngModel, ng-content.</span><br>\n    Part3: <span>Directive, exportAs, структурная директива.</span><br>\n    Part4: <span>Service, HttpClientModule.</span><br>\n    <br>\n    Create project: <span>ng new angular-notes --style=scss</span><br>\n    Configure if created without --style: <span>ng set defaults.styleExt scss</span><br>\n    Or edit file **angular.json**: <span>example in <a href=\"https://github.com/hsplit/Angular-Notes\">readme.md</a></span><br>\n    <br>\n    Create component: <span>ng g c my-component</span><br>\n    Create directive: <span>ng g d my-directive</span><br>\n    Create service: <span>ng g s my-data</span>\n  </div>\n  <div *ngIf=\"Part1.checked\">\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Интерполяция</b> <span>{{</span> выражение <span>}}</span></div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ interpTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ interpHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> x + 10 = {{ x + 10 }}</div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Data bind</b> [атрибут] = \"выражение\" </div>\n      <div class=\"style\"><b class=\"caption\">Style</b> {{ bindStyle }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ bindTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ bindHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> <span [class]=\"myClass\">Hello</span> </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">JoyCasino\n        <span [style.opacity]=\"myClassCasino.length%10/10\">♥</span></b>  Data bind + setInterval\n      </div>\n      <div class=\"style\"><b class=\"caption\">Style</b> {{ casinoStyle }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ casinoTS }} </div>\n      <div class=\"html\">\n        <b class=\"caption\">HTML</b> {{ casinoHTML }} <br>\n        <b class=\"caption\"></b> {{ casinoAdditional }}\n      </div>\n      <div class=\"result\"><b class=\"caption\">Result</b><span [class]=\"myClassCasino\">JoyCasino</span></div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Event</b> (событие) = \"выражение\" </div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ eventTS }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ eventHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b> <span (click)=\"myClick($event)\"> Click me!</span> </div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ eventInputHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        Color: <input type=\"text\" (input)=\"$event.target.style.backgroundColor = $event.target.value\" value=\"#E03136\">\n      </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Ссылки</b> #название </div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ linkHTML }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <span #mySpan> Color: </span>\n        <input type=\"text\" (input)=\"mySpan.style.color = $event.target.value\" value=\"#E03136\">\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"Part2.checked\">\n    <my-component [message]=\"'Hello world!'\" (newTitleMy)=\"newTitleApp($event)\" [(titleMy)]=\"title\">\n      <H3>Loading...</H3>\n    </my-component>\n  </div>\n  <div *ngIf=\"Part3.checked\">\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Directive</b> {{ directiveCaption }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS Bind</b> {{ directiveTSbind }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS Listen</b> {{ directiveTSlisten }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML app</b> {{ directiveHTMLapp }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <span appMyDirective style=\"user-select: none; cursor: pointer;\">Click me and i will change color.</span>\n      </div>\n      <div class=\"note\"><b class=\"caption\">Примечание</b><br>При использовании директивы она создается каждый раз. Т.е. если создать поле count, то оно будет разным в разных местах где применена директива.</div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Directive export</b> </div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ exportTS }}</div>\n      <div class=\"html\">\n        <b class=\"caption\">HTML app</b> {{ exportHTMLbtn }} <br>\n        <b class=\"caption\"></b> {{ exportHTMLelem }}\n      </div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <button (click)=\"myDir.myColor='yellow'\">Be yellow!</button>\n        <span appMyDirective #myDir=\"myExport\" style=\"user-select: none; cursor: pointer;\"> Click me and i will change color.</span>\n      </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">*Directive</b> {{ directiveCaptionStruct }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS</b> {{ directiveTSStruct }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML app</b> {{ directiveHTMLappStruct }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        <label style=\"cursor: pointer; text-decoration: underline;\">Отрисовано <input type=\"checkbox\" #refresh checked></label>\n        <span *ngIf=\"refresh.checked\">\n          <span *appMyStructDirective>Текст, который появляется с запозданием.</span>\n        </span>\n      </div>\n      <div class=\"note\"><b class=\"caption\">Примечание</b><br>Директива добавляет отображение с задержкой, чтобы пронаблюдать нужно снять и поставить флаг у \"Отрисовано\", и с задержкой будет отображен элемент. Можно также передавать параметры через @Input, в HTML это будет записано например так: *appMyStructDirective=\"параметр\".</div>\n    </div>\n  </div>\n  <div *ngIf=\"Part4.checked\">\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">Service</b> {{ serviceTSmodule }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS service</b> {{ serviceTS }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS app.comp</b> {{ serviceTSapp }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ serviceHTMLapp1 }}</div>\n      <div class=\"html\"><b class=\"caption\"></b> {{ serviceHTMLapp2 }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        Words from dataService: <span *ngFor=\"let item of getAllWords()\">{{ item.word }} </span>\n      </div>\n      <div class=\"result\"><b class=\"caption\"></b>\n        Нажать Enter для добавления слова в сервис:\n        <input type=\"text\" (keyup.enter)=\"addWord($event.target.value)\">\n      </div>\n    </div>\n    <div class=\"block\">\n      <div><b class=\"caption caption_first\">HttpClientModule</b> {{ httpTSmodule }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS service</b> {{ serviceTShttp }}</div>\n      <div class=\"ts\"><b class=\"caption\">TS app.comp</b> {{ serviceTSapphttp }}</div>\n      <div class=\"html\"><b class=\"caption\">HTML</b> {{ serviceHTMLapphttp }}</div>\n      <div class=\"result\"><b class=\"caption\">Result</b>\n        Data from Http: <span *ngFor=\"let item of getDataHttp()\">{{ item }} </span>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -56,6 +56,7 @@ module.exports = ":host {\n  background: #2B2B2B;\n  color: #BBBBBB; }\n\n.link-
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_my_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/my-data.service */ "./src/app/services/my-data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,9 +67,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(dataService) {
         var _this = this;
+        this.dataService = dataService;
         this.title = 'app';
         this.interpTS = 'class AppComponent { x = 5; }';
         this.interpHTML = '<span>x + 10 = {{ x + 10 }}</span>';
@@ -80,24 +83,33 @@ var AppComponent = /** @class */ (function () {
         // noinspection TsLint
         this.casinoTS = "\n  class AppComponent {\n    myClassCasino = 'blue-text'; \n    \n    constructor() {\n      setInterval(() => {\n        this.myClassCasino = this.myClassCasino === 'blue-text' ? 'yellow-text' : 'blue-text';\n      }, 500);\n    }\n  }";
         this.casinoHTML = '<span [class]="myClassCasino">JoyCasino</span>';
-        this.casinoAdditional = '<span [style.opacity]="myClassCasino.length%10/10">♥</span>';
+        this.casinoAdditional = '<span [style.opacity]="myClassCasino.length%10 / 10">♥</span>';
         this.casinoStyle = ".yellow-text { color: yellow; } .blue-text { color: deepskyblue; }";
         this.myClassCasino = 'blue-text';
         this.eventTS = "\n  class AppComponent {\n    myClick(e) {\n      alert('timeStamp = ' + e.timeStamp);\n    }\n  }";
         this.eventHTML = '<span (click)="myClick($event)">Click me!</span>';
         this.eventInputHTML = "Color: <input type=\"text\" (input)=\"$event.target.style.backgroundColor = $event.target.value\">";
         this.linkHTML = "<span #mySpan>Color: </span><input type=\"text\" (input)=\"mySpan.style.color = $event.target.value\">";
-        // Part 3 -------------------------------------------------------------
+        // ------------------------------------------------------------------------------------------------------ Part 3
         this.directiveCaption = "@Directive ({ selector: '[appMyDirective]' })";
         this.directiveTSbind = "\n  export class MyDirectiveDirective {\n    @HostBinding('style.color') myColor: string;\n  \n    constructor() {\n      this.myColor = 'pink';\n    }\n  }";
         this.directiveTSlisten = "\n  @HostListener('click', ['$event']) changeColor(event) {\n    this.myColor = this.myColor === 'pink' ? '#289FDB' : 'pink';\n  }";
         this.directiveHTMLapp = "<span appMyDirective>I will pink</span>";
         this.directiveCaptionStruct = "@Directive({ selector: '[appMyStructDirective]' })";
         this.directiveTSStruct = "\n  export class MyStructDirectiveDirective {\n\n    constructor(\n      private template: TemplateRef<any>,\n      private view: ViewContainerRef\n    ) {\n      this.delay();\n    }\n    delay() {\n      setTimeout( () => this.view.createEmbeddedView(this.template), 2000);\n    }\n  }";
-        this.directiveHTMLappStruct = "<span *appMyStructDirective>Click me and i will change color.</span>";
+        this.directiveHTMLappStruct = "<span *appMyStructDirective>\u0422\u0435\u043A\u0441\u0442, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043F\u043E\u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0441 \u0437\u0430\u043F\u043E\u0437\u0434\u0430\u043D\u0438\u0435\u043C.</span>";
         this.exportTS = "\n  @Directive({\n    selector: '[appMyDirective]',\n    exportAs: 'myExport'\n  })";
         this.exportHTMLbtn = "<button (click)=\"myDir.myColor='yellow'\">Be yellow!</button>";
         this.exportHTMLelem = "<span appMyDirective #myDir=\"myExport\">Click me and i will change color.</span>";
+        this.serviceTSmodule = "providers: [MyDataService]";
+        this.serviceTS = "\n  export class MyDataService {\n  \n    constructor() { }\n  \n    private data = [\n      {word: 'Hello'},\n      {word: 'World!'}\n    ];\n  \n    getData() {\n      return this.data;\n    }\n  \n    addData(word: string) {\n      this.data.push({ word });\n    }\n  }";
+        this.serviceTSapp = "\n  constructor(private dataService: MyDataService) { }\n  \n  getAllWords() {\n    return this.dataService.getData();\n  }\n  addWord(word: string) {\n    this.dataService.addData(word);\n  }";
+        this.serviceHTMLapp1 = "Words from dataService: <span *ngFor=\"let item of getAllWords()\">{{ item.word }} </span>";
+        this.serviceHTMLapp2 = "<input type=\"text\" (keyup.enter)=\"addWord($event.target.value)\">";
+        this.httpTSmodule = "imports: [HttpClientModule]";
+        this.serviceTShttp = "\n  @Injectable()\n  export class MyDataService {\n    private dataFromHttp = ['Existing string'];\n  \n    constructor(private _http: HttpClient) {\n      this._http.get('https://jsonplaceholder.typicode.com/users')\n                .subscribe(users => {for (const key in users) this.dataFromHttp.push(users[key].username)});\n    }\n  \n    getDataHttp() {\n      return this.dataFromHttp;\n    }";
+        this.serviceTSapphttp = "\n  getDataHttp() {\n    return this.dataService.getDataHttp();\n  }";
+        this.serviceHTMLapphttp = "Data from Http: <span *ngFor=\"let item of getDataHttp()\">{{ item }} </span>";
         setInterval(function () {
             _this.myClassCasino = _this.myClassCasino === 'blue-text' ? 'yellow-text' : 'blue-text';
         }, 500);
@@ -108,13 +120,23 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.myClick = function (e) {
         alert('timeStamp = ' + e.timeStamp);
     };
+    // ------------------------------------------------------------------------------------------------------ Part 4
+    AppComponent.prototype.getAllWords = function () {
+        return this.dataService.getData();
+    };
+    AppComponent.prototype.addWord = function (word) {
+        this.dataService.addData(word);
+    };
+    AppComponent.prototype.getDataHttp = function () {
+        return this.dataService.getDataHttp();
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_my_data_service__WEBPACK_IMPORTED_MODULE_1__["MyDataService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -140,12 +162,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_my_component_my_component_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/my-component/my-component.component */ "./src/app/components/my-component/my-component.component.ts");
 /* harmony import */ var _directives_my_directive_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./directives/my-directive.directive */ "./src/app/directives/my-directive.directive.ts");
 /* harmony import */ var _directives_my_struct_directive_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./directives/my-struct-directive.directive */ "./src/app/directives/my-struct-directive.directive.ts");
+/* harmony import */ var _services_my_data_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/my-data.service */ "./src/app/services/my-data.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -165,9 +191,9 @@ var AppModule = /** @class */ (function () {
                 _directives_my_struct_directive_directive__WEBPACK_IMPORTED_MODULE_6__["MyStructDirectiveDirective"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"]
             ],
-            providers: [],
+            providers: [_services_my_data_service__WEBPACK_IMPORTED_MODULE_7__["MyDataService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
@@ -372,6 +398,65 @@ var MyStructDirectiveDirective = /** @class */ (function () {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"]])
     ], MyStructDirectiveDirective);
     return MyStructDirectiveDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/my-data.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/my-data.service.ts ***!
+  \*********************************************/
+/*! exports provided: MyDataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyDataService", function() { return MyDataService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MyDataService = /** @class */ (function () {
+    // private dataFromHttp: Array<string>;
+    function MyDataService(_http) {
+        var _this = this;
+        this._http = _http;
+        this.dataFromHttp = ['Existing string'];
+        this.data = [
+            { word: 'Hello' },
+            { word: 'World!' }
+        ];
+        this._http.get('https://jsonplaceholder.typicode.com/users')
+            .subscribe(function (users) { for (var key in users)
+            _this.dataFromHttp.push(users[key].username); });
+    }
+    MyDataService.prototype.getDataHttp = function () {
+        return this.dataFromHttp;
+    };
+    MyDataService.prototype.getData = function () {
+        return this.data;
+    };
+    MyDataService.prototype.addData = function (word) {
+        this.data.push({ word: word });
+    };
+    MyDataService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], MyDataService);
+    return MyDataService;
 }());
 
 

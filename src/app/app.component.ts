@@ -1,4 +1,5 @@
-import {Component, NgModule} from '@angular/core';
+import {Component} from '@angular/core';
+import {MyDataService} from './services/my-data.service';
 
 @Component({
   selector: 'app-root',
@@ -32,11 +33,11 @@ export class AppComponent {
     }
   }`;
   casinoHTML = '<span [class]="myClassCasino">JoyCasino</span>';
-  casinoAdditional = '<span [style.opacity]="myClassCasino.length%10/10">♥</span>';
+  casinoAdditional = '<span [style.opacity]="myClassCasino.length%10 / 10">♥</span>';
   casinoStyle = `.yellow-text { color: yellow; } .blue-text { color: deepskyblue; }`;
   myClassCasino = 'blue-text';
 
-  constructor() {
+  constructor(private dataService: MyDataService) {
     setInterval(() => {
       this.myClassCasino = this.myClassCasino === 'blue-text' ? 'yellow-text' : 'blue-text';
     }, 500);
@@ -57,7 +58,7 @@ export class AppComponent {
     alert('timeStamp = ' + e.timeStamp);
   }
 
-  // Part 3 -------------------------------------------------------------
+  // ------------------------------------------------------------------------------------------------------ Part 3
   directiveCaption = `@Directive ({ selector: '[appMyDirective]' })`;
   directiveTSbind = `
   export class MyDirectiveDirective {
@@ -87,7 +88,7 @@ export class AppComponent {
       setTimeout( () => this.view.createEmbeddedView(this.template), 2000);
     }
   }`;
-  directiveHTMLappStruct = `<span *appMyStructDirective>Click me and i will change color.</span>`;
+  directiveHTMLappStruct = `<span *appMyStructDirective>Текст, который появляется с запозданием.</span>`;
 
   exportTS = `
   @Directive({
@@ -96,4 +97,67 @@ export class AppComponent {
   })`;
   exportHTMLbtn = `<button (click)="myDir.myColor='yellow'">Be yellow!</button>`;
   exportHTMLelem = `<span appMyDirective #myDir="myExport">Click me and i will change color.</span>`;
+
+  // ------------------------------------------------------------------------------------------------------ Part 4
+  getAllWords() {
+    return this.dataService.getData();
+  }
+  addWord(word: string) {
+    this.dataService.addData(word);
+  }
+
+  serviceTSmodule = `providers: [MyDataService]`;
+  serviceTS = `
+  export class MyDataService {
+  
+    constructor() { }
+  
+    private data = [
+      {word: 'Hello'},
+      {word: 'World!'}
+    ];
+  
+    getData() {
+      return this.data;
+    }
+  
+    addData(word: string) {
+      this.data.push({ word });
+    }
+  }`;
+  serviceTSapp = `
+  constructor(private dataService: MyDataService) { }
+  
+  getAllWords() {
+    return this.dataService.getData();
+  }
+  addWord(word: string) {
+    this.dataService.addData(word);
+  }`;
+  serviceHTMLapp1 = `Words from dataService: <span *ngFor="let item of getAllWords()">{{ item.word }} </span>`;
+  serviceHTMLapp2 = `<input type="text" (keyup.enter)="addWord($event.target.value)">`;
+
+  getDataHttp() {
+    return this.dataService.getDataHttp();
+  }
+
+  httpTSmodule = `imports: [HttpClientModule]`;
+  serviceTShttp = `
+  @Injectable()
+  export class MyDataService {
+    private dataFromHttp = ['Existing string'];
+  
+    constructor(private _http: HttpClient) {
+      this._http.get('https://jsonplaceholder.typicode.com/users')
+                .subscribe(users => {for (const key in users) this.dataFromHttp.push(users[key].username)});
+    }
+  
+    getDataHttp() {
+      return this.dataFromHttp;
+    }`;
+  serviceTSapphttp = `
+  getDataHttp() {
+    return this.dataService.getDataHttp();
+  }`;
+  serviceHTMLapphttp = `Data from Http: <span *ngFor="let item of getDataHttp()">{{ item }} </span>`;
 }
