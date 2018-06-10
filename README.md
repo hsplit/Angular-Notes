@@ -2,9 +2,14 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
 Part1: Интерполяция {{}}, data bind []="", event ()="", link #.
+
 Part2: Component, @Input, *ngIf, *ngFor, @Output, Double Bind [(ngModel)], ng-content.
+
 Part3: Directive, exportAs, структурная директива.
+
 Part4: Service, HttpClientModule.
+
+Part5: Pipe.
 ___
 #### Create project
 [Using Sass with the Angular CLI](https://scotch.io/tutorials/using-sass-with-the-angular-cli)
@@ -47,3 +52,9 @@ ___
 ng g s my-data
 ```
 Check *import* and *providers* in **app.module.ts**
+___
+#### Create pipe
+```bash
+ng g p user-filter
+```
+Check *import* and *declarations* in **app.module.ts**

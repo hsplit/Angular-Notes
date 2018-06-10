@@ -8,13 +8,17 @@ import { MyDirectiveDirective } from './directives/my-directive.directive';
 import { MyStructDirectiveDirective } from './directives/my-struct-directive.directive';
 import { MyDataService } from './services/my-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserFilterPipe } from './pipes/user-filter.pipe';
+import { UserFilterComponent } from './components/user-filter/user-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyComponentComponent,
     MyDirectiveDirective,
-    MyStructDirectiveDirective
+    MyStructDirectiveDirective,
+    UserFilterPipe,
+    UserFilterComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

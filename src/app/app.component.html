@@ -18,6 +18,9 @@
   <div class="part">
     <label>Part four <input type="checkbox" #Part4></label>
   </div>
+  <div class="part">
+    <label>Part five <input type="checkbox" #Part5></label>
+  </div>
 </div>
 <div>
   <div *ngIf="Readme.checked" class="readme">
@@ -26,6 +29,7 @@
     Part2: <span>Component, @Input, *ngIf, *ngFor, @Output, Double Bind - ngModel, ng-content.</span><br>
     Part3: <span>Directive, exportAs, структурная директива.</span><br>
     Part4: <span>Service, HttpClientModule.</span><br>
+    Part5: <span>Pipe.</span><br>
     <br>
     Create project: <span>ng new angular-notes --style=scss</span><br>
     Configure if created without --style: <span>ng set defaults.styleExt scss</span><br>
@@ -33,7 +37,8 @@
     <br>
     Create component: <span>ng g c my-component</span><br>
     Create directive: <span>ng g d my-directive</span><br>
-    Create service: <span>ng g s my-data</span>
+    Create service: <span>ng g s my-data</span><br>
+    Create pipe: <span>ng g p user-filter</span>
   </div>
   <div *ngIf="Part1.checked">
     <div class="block">
@@ -81,11 +86,13 @@
     </div>
   </div>
   <div *ngIf="Part2.checked">
+    <hr style="background: #f00; height: 2px; border: none;">
     <my-component [message]="'Hello world!'" (newTitleMy)="newTitleApp($event)" [(titleMy)]="title">
       <H3>Loading...</H3>
     </my-component>
   </div>
   <div *ngIf="Part3.checked">
+    <hr style="background: #f00; height: 2px; border: none;">
     <div class="block">
       <div><b class="caption caption_first">Directive</b> {{ directiveCaption }}</div>
       <div class="ts"><b class="caption">TS Bind</b> {{ directiveTSbind }}</div>
@@ -122,6 +129,7 @@
     </div>
   </div>
   <div *ngIf="Part4.checked">
+    <hr style="background: #f00; height: 2px; border: none;">
     <div class="block">
       <div><b class="caption caption_first">Service</b> {{ serviceTSmodule }}</div>
       <div class="ts"><b class="caption">TS service</b> {{ serviceTS }}</div>
@@ -143,6 +151,27 @@
       <div class="html"><b class="caption">HTML</b> {{ serviceHTMLapphttp }}</div>
       <div class="result"><b class="caption">Result</b>
         Data from Http: <span *ngFor="let item of getDataHttp()">{{ item }} </span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="Part5.checked">
+    <hr style="background: #f00; height: 2px; border: none;">
+    <div class="block">
+      <div><b class="caption caption_first">Pipe</b> </div>
+      <div class="ts"><b class="caption">TS pipe</b> {{ pipeTS }}</div>
+      <div class="ts"><b class="caption">TS service</b> {{ pipeService }}</div>
+      <div class="ts"><b class="caption">TS filter-comp</b> {{ pipeTSuserFilterComponent }}</div>
+      <div class="html"><b class="caption">HTML filter-comp</b> {{ pipeHTMLuserFiler1 }}</div>
+      <div class="html"><b class="caption"></b> {{ pipeHTMLuserFiler2 }}</div>
+      <div class="html"><b class="caption"></b> {{ pipeHTMLuserFiler3 }}</div>
+      <div class="html"><b class="caption"></b> {{ pipeHTMLuserFiler3 }}</div>
+      <div class="html"><b class="caption">HTML app</b> {{ pipeAppHTML1 }}</div>
+      <div class="html"><b class="caption"></b> {{ pipeAppHTML2 }}</div>
+      <hr>
+      <user-filter [filter]="filter"></user-filter>
+      <ul><li *ngFor="let user of getDataHttpObj() | userFilter:filter">{{ user.id }} {{ user.name }}</li></ul>
+      <div class="result">
+        Without filter: <ul><li *ngFor="let item of getDataHttpObj()">{{ item.name }} </li></ul>
       </div>
     </div>
   </div>

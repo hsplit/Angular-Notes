@@ -8,13 +8,62 @@ import {MyDataService} from './services/my-data.service';
 })
 export class AppComponent {
   title = 'app';
+  x = 5;
+
   newTitleApp(str) {
     this.title = str;
   }
 
+  myClick(e) {
+    alert('timeStamp = ' + e.timeStamp);
+  }
+
+  constructor(private dataService: MyDataService) {
+    setInterval(() => {
+      this.myClassCasino = this.myClassCasino === 'blue-text' ? 'yellow-text' : 'blue-text';
+    }, 500);
+
+    this.filter = this.dataService.getDafalutFilter();
+  }
+
+  filter;
+
+  getAllWords() {
+    return this.dataService.getData();
+  }
+  addWord(word: string) {
+    this.dataService.addData(word);
+  }
+
+  getDataHttp() {
+    return this.dataService.getDataHttp();
+  }
+  getDataHttpObj() {
+    return this.dataService.getDataHttpObj();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /**
+   * Наполнение HTML
+   */
+  // ------------------------------------------------------------------------------------------------------ Part 1
   interpTS = 'class AppComponent { x = 5; }';
   interpHTML = '<span>x + 10 = {{ x + 10 }}</span>';
-  x = 5;
 
   bindTS = `class AppComponent { myClass = 'green-text'; }`;
   bindHTML = '<span [class]="myClass">Hello</span>';
@@ -37,12 +86,6 @@ export class AppComponent {
   casinoStyle = `.yellow-text { color: yellow; } .blue-text { color: deepskyblue; }`;
   myClassCasino = 'blue-text';
 
-  constructor(private dataService: MyDataService) {
-    setInterval(() => {
-      this.myClassCasino = this.myClassCasino === 'blue-text' ? 'yellow-text' : 'blue-text';
-    }, 500);
-  }
-
   eventTS = `
   class AppComponent {
     myClick(e) {
@@ -53,10 +96,6 @@ export class AppComponent {
   eventInputHTML = `Color: <input type="text" (input)="$event.target.style.backgroundColor = $event.target.value">`;
 
   linkHTML = `<span #mySpan>Color: </span><input type="text" (input)="mySpan.style.color = $event.target.value">`;
-
-  myClick(e) {
-    alert('timeStamp = ' + e.timeStamp);
-  }
 
   // ------------------------------------------------------------------------------------------------------ Part 3
   directiveCaption = `@Directive ({ selector: '[appMyDirective]' })`;
@@ -99,12 +138,6 @@ export class AppComponent {
   exportHTMLelem = `<span appMyDirective #myDir="myExport">Click me and i will change color.</span>`;
 
   // ------------------------------------------------------------------------------------------------------ Part 4
-  getAllWords() {
-    return this.dataService.getData();
-  }
-  addWord(word: string) {
-    this.dataService.addData(word);
-  }
 
   serviceTSmodule = `providers: [MyDataService]`;
   serviceTS = `
@@ -137,15 +170,11 @@ export class AppComponent {
   serviceHTMLapp1 = `Words from dataService: <span *ngFor="let item of getAllWords()">{{ item.word }} </span>`;
   serviceHTMLapp2 = `<input type="text" (keyup.enter)="addWord($event.target.value)">`;
 
-  getDataHttp() {
-    return this.dataService.getDataHttp();
-  }
-
   httpTSmodule = `imports: [HttpClientModule]`;
   serviceTShttp = `
   @Injectable()
   export class MyDataService {
-    private dataFromHttp = ['Existing string'];
+    private dataFromHttp = [];
   
     constructor(private _http: HttpClient) {
       this._http.get('https://jsonplaceholder.typicode.com/users')
@@ -160,4 +189,44 @@ export class AppComponent {
     return this.dataService.getDataHttp();
   }`;
   serviceHTMLapphttp = `Data from Http: <span *ngFor="let item of getDataHttp()">{{ item }} </span>`;
+
+  // ------------------------------------------------------------------------------------------------------ Part 5
+  pipeHTMLuserFiler1 = `<label>Search: <input type="search" [(ngModel)]="filter.name" value=""></label>`;
+  pipeHTMLuserFiler2 = `ID: <label>from <input style="width: 45px;" type="number" [(ngModel)]="filter.idmin"></label>`;
+  pipeHTMLuserFiler3 = `<label> to <input style="width: 45px;" type="number" [(ngModel)]="filter.idmax"></label>`;
+  pipeTSuserFilterComponent = `
+  export class UserFilterComponent {
+    @Input() filter;
+  }`;
+  pipeAppHTML1 = `<user-filter [filter]="filter"></user-filter>`;
+  pipeAppHTML2 = `<ul><li *ngFor="let user of getDataHttpObj() | userFilter:filter">{{ user.id }} {{ user.name }}</li></ul>`;
+
+  pipeService = `
+  getDafalutFilter () {
+    return {
+      name: '',
+      idmin: 1,
+      idmax: 10
+    };
+  }`;
+
+  pipeTS = `
+  const filters = [
+    (user, filter) => user.name.toUpperCase().includes(filter.name.toUpperCase()),
+    (user, filter) => user.id <= filter.idmax && user.id >= filter.idmin
+  ];
+  
+  @Pipe({
+    name: 'userFilter',
+    pure: false
+  })
+  export class UserFilterPipe implements PipeTransform {
+  
+    transform(value: any, filter: any): any {
+      return value.filter( user => {
+        return filters.every(filterFunction => filterFunction(user, filter));
+      });
+    }
+  
+  }`;
 }
