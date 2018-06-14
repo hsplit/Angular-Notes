@@ -1,0 +1,15 @@
+<div [ngClass]="getCurrentLocalization().isRtl ? 'australian-rtl' : ''">
+  <select [(ngModel)]="currentLanguage">
+  <option *ngFor="let language of languageList"
+          [value]="language.code">{{ language.title }}</option>
+  </select>
+  <span> {{ currentLanguage }}</span><br> <span>Settings: {{ getCurrentLocalization() | json }}</span><br>
+  Date: {{ date }}
+  <div>ShortDate: {{ date | date:'shortDate' }}</div>
+  <div>MediumDate: {{ date | date:'mediumDate' }}</div>
+  <div>LongDate: {{ date | date:'longDate' }}</div>
+  <div>ShortTime: {{ date | date:'shortTime' }}</div>
+  <hr>
+  <div>{{ 'Date' | translate:currentLanguage }}: {{ date | dateFormat:currentLanguage }}</div>
+  <div>{{ 'Time' | translate:currentLanguage }}: {{ date | dateFormat:currentLanguage:true }}</div>
+</div>

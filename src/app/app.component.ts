@@ -9,6 +9,7 @@ import {MyDataService} from './services/my-data.service';
 export class AppComponent {
   title = 'app';
   x = 5;
+  filter;
 
   newTitleApp(str) {
     this.title = str;
@@ -25,8 +26,6 @@ export class AppComponent {
 
     this.filter = this.dataService.getDafalutFilter();
   }
-
-  filter;
 
   getAllWords() {
     return this.dataService.getData();
@@ -228,5 +227,129 @@ export class AppComponent {
       });
     }
   
+  }`;
+  // ------------------------------------------------------------------------------------------------------ Part 6
+  lSwitchTS = `
+  export class LanguageSwitcherComponent {
+    languageList: Array<LanguageDescription>;
+    date;
+  
+    constructor(private localizationService: LocalizationService) {
+      this.languageList = localizationService.getLanguageList();
+      this.date = Date.now();
+      setInterval( () => {
+        this.date = Date.now();
+      }, 1000);
+    }
+    getCurrentLocalization() {
+      return this.localizationService.getCurrentLocalization();
+    }
+  
+    get currentLanguage() {
+      return this.localizationService.currentLanguage;
+    }
+  
+    set currentLanguage(code) {
+      this.localizationService.setCurrentLocalization(code);
+    }
+  }`;
+  lSwitchHTML = `
+  <select [(ngModel)]="currentLanguage">
+  <option *ngFor="let language of languageList"
+            [value]="language.code">{{ language.title }}</option>
+  </select>
+  <span> {{ currentLanguage }}</span><br> <span>Settings: {{ getCurrentLocalization() | json }}</span><br>
+  Date: {{ date }}
+  <div>ShortDate: {{ date | date:'shortDate' }}</div>
+  <div>MediumDate: {{ date | date:'mediumDate' }}</div>
+  <div>LongDate: {{ date | date:'longDate' }}</div>
+  <div>ShortTime: {{ date | date:'shortTime' }}</div>
+  <hr>
+  <div>{{ 'Date' | translate:currentLanguage }}: {{ date | dateFormat:currentLanguage }}</div>
+  <div>{{ 'Time' | translate:currentLanguage }}: {{ date | dateFormat:currentLanguage:true }}</div>
+  `;
+
+  interfaceTS = `
+  export interface LanguageDescription {
+    title: string;
+    code: string;
+    isRtl: boolean;
+  }`;
+
+  localizServiceTS = `
+  export class LocalizationService {
+    currentLanguage = 'ru-RU';
+    private languages = new Map<string, LanguageDescription>([
+      ['ru-RU', {
+        title: 'Русский',
+        code: 'ru-RU',
+        isRtl: false
+      }],
+      ['en-US', {
+        title: 'English (US)',
+        code: 'en-US',
+        isRtl: false
+      }],
+      ['en-GB', {
+        title: 'English (GB)',
+        code: 'en-GB',
+        isRtl: false
+      }]
+    ]);
+    private words = new Map<string, any> ([
+      ['ru-RU', {
+        'Date': 'Дата',
+        'Time': 'Время'
+      }]
+    ]);
+  
+    getWord(word: string): string {
+      if (this.words.has(this.currentLanguage)) {
+        if (this.words.get(this.currentLanguage)[word]) {
+          return this.words.get(this.currentLanguage)[word];
+        } else {
+          return word;
+        }
+      } else {
+        return word;
+      }
+    }
+  
+    getLanguageList(): Array<LanguageDescription> {
+      return [...this.languages.values()];
+    }
+  
+    setCurrentLocalization(code: string) {
+      if (this.languages.has(code)) {
+        this.currentLanguage = code;
+      }
+    }
+  
+    getCurrentLocalization(): LanguageDescription {
+      return this.languages.get(this.currentLanguage);
+    }
+  }`;
+
+  pipeDate = `
+  export class DateFormatPipe implements PipeTransform {
+    dateFormatter: DateTimeFormat;
+  
+    transform(date: Date, code: string, kind?: boolean) {
+      this.dateFormatter = kind ? new Intl.DateTimeFormat(code, {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+      }) : new Intl.DateTimeFormat(code);
+      return this.dateFormatter.format(date);
+    }
+  
+  }`;
+  pipeTranslate = `
+  export class TranslatePipe implements PipeTransform {
+    constructor(private localizationService: LocalizationService) { }
+  
+    transform(word: string, args?: any): string {
+      return this.localizationService.getWord(word);
+    }
   }`;
 }

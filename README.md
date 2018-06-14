@@ -10,6 +10,8 @@ Part3: Directive, exportAs, структурная директива.
 Part4: Service, HttpClientModule.
 
 Part5: Pipe.
+
+Part6: Localization.
 ___
 #### Create project
 [Using Sass with the Angular CLI](https://scotch.io/tutorials/using-sass-with-the-angular-cli)
@@ -58,3 +60,8 @@ ___
 ng g p user-filter
 ```
 Check *import* and *declarations* in **app.module.ts**
+___
+#### Create interface
+```bash
+ng g i localizations-interfaces
+```

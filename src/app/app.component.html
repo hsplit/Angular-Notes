@@ -7,7 +7,7 @@
     <label>Read Me<input type="checkbox" #Readme checked></label>
   </div>
   <div class="part">
-    <label>Part one <input type="checkbox" #Part1 checked></label>
+    <label>Part one <input type="checkbox" #Part1></label>
   </div>
   <div class="part">
     <label>Part two <input type="checkbox" #Part2></label>
@@ -21,6 +21,9 @@
   <div class="part">
     <label>Part five <input type="checkbox" #Part5></label>
   </div>
+  <div class="part">
+    <label>Part six <input type="checkbox" #Part6></label>
+  </div>
 </div>
 <div>
   <div *ngIf="Readme.checked" class="readme">
@@ -30,15 +33,17 @@
     Part3: <span>Directive, exportAs, структурная директива.</span><br>
     Part4: <span>Service, HttpClientModule.</span><br>
     Part5: <span>Pipe.</span><br>
+    Part6: <span>Localization.</span><br>
     <br>
     Create project: <span>ng new angular-notes --style=scss</span><br>
     Configure if created without --style: <span>ng set defaults.styleExt scss</span><br>
-    Or edit file **angular.json**: <span>example in <a href="https://github.com/hsplit/Angular-Notes">readme.md</a></span><br>
+    Or edit file angular.json: <span>example in <a href="https://github.com/hsplit/Angular-Notes">readme.md</a></span><br>
     <br>
     Create component: <span>ng g c my-component</span><br>
     Create directive: <span>ng g d my-directive</span><br>
     Create service: <span>ng g s my-data</span><br>
-    Create pipe: <span>ng g p user-filter</span>
+    Create pipe: <span>ng g p user-filter</span><br>
+    Create interface: <span>ng g i localizations-interfaces</span>
   </div>
   <div *ngIf="Part1.checked">
     <div class="block">
@@ -173,6 +178,20 @@
       <div class="result">
         Without filter: <ul><li *ngFor="let item of getDataHttpObj()">{{ item.name }} </li></ul>
       </div>
+    </div>
+  </div>
+  <div *ngIf="Part6.checked">
+    <hr style="background: #f00; height: 2px; border: none;">
+    <div class="block">
+      <div><b class="caption caption_first">Localization</b> </div>
+      <language-switcher></language-switcher>
+      <hr>
+      <div class="ts"><b class="caption">TS interface</b> {{ interfaceTS }}</div>
+      <div class="ts"><b class="caption">TS component</b> {{ lSwitchTS }}</div>
+      <div class="html"><b class="caption">HTML component</b> {{ lSwitchHTML }}</div>
+      <div class="ts"><b class="caption">TS service</b> {{ localizServiceTS }}</div>
+      <div class="ts"><b class="caption">Pipe Date</b> {{ pipeDate }}</div>
+      <div class="ts"><b class="caption">Pipe translate</b> {{ pipeTranslate }}</div>
     </div>
   </div>
 </div>
