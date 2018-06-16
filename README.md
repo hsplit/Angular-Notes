@@ -12,6 +12,8 @@ Part4: Service, HttpClientModule.
 Part5: Pipe.
 
 Part6: Localization.
+
+Part7: Routes.
 ___
 #### Create project
 [Using Sass with the Angular CLI](https://scotch.io/tutorials/using-sass-with-the-angular-cli)
