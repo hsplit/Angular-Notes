@@ -352,4 +352,59 @@ export class AppComponent {
       return this.localizationService.getWord(word);
     }
   }`;
+
+  // ------------------------------------------------------------------------------------------------------ Part 7
+  routerModule = `
+  import { RouterModule, Routes } from '@angular/router';
+  
+  const routes: Routes = [
+    { path: 'my-component', component: MyComponentComponent },
+    { path: 'language-switcher', component: LanguageSwitcherComponent },
+    { path: '**', redirectTo: '/', pathMatch: 'full' }
+  ];
+  
+  @NgModule({
+    imports: [ RouterModule.forRoot(routes) ],
+    exports: [ RouterModule ]
+  })
+  export class AppRouterModule { }
+  `;
+
+  routerApp = `
+  import { AppRouterModule } from './modules/router/router.module';
+  @NgModule({
+    ...
+    imports: [
+      ...
+      AppRouterModule
+    ]
+  })
+  `;
+
+  routerHTML = `
+  Menu: <a class="link" routerLink="/my-component" routerLinkActive="link-active">my-component</a>
+              <a class="link" routerLink="/language-switcher" routerLinkActive="link-active">language-switcher</a>
+              <a class="link" routerLink="/not-exist">not-exist</a>
+              
+   <router-outlet><h1>Hello. I am inside router-outlet.</h1></router-outlet>
+        
+  Custom <a [routerLink]="'/item/' + item.id">
+  `;
+
+  routerParams = `
+  router
+  path: 'item/:id', component: ItemComponent
+  ----------------------------------------------------------
+  
+  item-component
+  constructor(private roure: ActivatedRoute) {
+    this.roure.params.subscribe(params => this.id = params.id);
+  };
+  `;
+
+  routerStyle = `
+  .link-active {
+    color: deepskyblue;
+  }
+  `;
 }

@@ -65,3 +65,8 @@ ___
 ```bash
 ng g i localizations-interfaces
 ```
+___
+#### Create module
+```bash
+ng g m router
+```

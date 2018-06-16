@@ -24,6 +24,9 @@
   <div class="part">
     <label>Part six <input type="checkbox" #Part6></label>
   </div>
+  <div class="part">
+    <label>Part seven <input type="checkbox" #Part7></label>
+  </div>
 </div>
 <div>
   <div *ngIf="Readme.checked" class="readme">
@@ -34,6 +37,7 @@
     Part4: <span>Service, HttpClientModule.</span><br>
     Part5: <span>Pipe.</span><br>
     Part6: <span>Localization.</span><br>
+    Part7: <span>Routes.</span><br>
     <br>
     Create project: <span>ng new angular-notes --style=scss</span><br>
     Configure if created without --style: <span>ng set defaults.styleExt scss</span><br>
@@ -43,7 +47,8 @@
     Create directive: <span>ng g d my-directive</span><br>
     Create service: <span>ng g s my-data</span><br>
     Create pipe: <span>ng g p user-filter</span><br>
-    Create interface: <span>ng g i localizations-interfaces</span>
+    Create interface: <span>ng g i localizations-interfaces</span><br>
+    Create module: <span>ng g m router</span>
   </div>
   <div *ngIf="Part1.checked">
     <div class="block">
@@ -192,6 +197,25 @@
       <div class="ts"><b class="caption">TS service</b> {{ localizServiceTS }}</div>
       <div class="ts"><b class="caption">Pipe Date</b> {{ pipeDate }}</div>
       <div class="ts"><b class="caption">Pipe translate</b> {{ pipeTranslate }}</div>
+    </div>
+  </div>
+  <div *ngIf="Part7.checked">
+    <hr style="background: #f00; height: 2px; border: none;">
+    <div class="block">
+      <div><b class="caption caption_first">Routes</b> </div>
+      <div class="result">
+        Menu: <a class="link" routerLink="/my-component" routerLinkActive="link-active">my-component</a>
+              <a class="link" routerLink="/language-switcher" routerLinkActive="link-active">language-switcher</a>
+              <a class="link" routerLink="/not-exist">not-exist</a>
+      </div>
+      <router-outlet><h1>Hello. I am inside router-outlet.</h1></router-outlet>
+    </div>
+    <div class="block">
+      <div class="ts"><b class="caption">TS router.module</b> {{ routerModule }}</div>
+      <div class="ts"><b class="caption">TS app.module</b> {{ routerApp }}</div>
+      <div class="html"><b class="caption">HTML</b> {{ routerHTML }}</div>
+      <div class="style"><b class="caption">Style</b> {{ routerStyle }}</div>
+      <div class="ts"><b class="caption">TS params</b> {{ routerParams }}</div>
     </div>
   </div>
 </div>

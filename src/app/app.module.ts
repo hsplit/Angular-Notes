@@ -14,6 +14,7 @@ import { LanguageSwitcherComponent } from './components/language-switcher/langua
 import { LocalizationService } from './services/localization.service';
 import { DateFormatPipe } from './pipes/date-format.pipe';
 import { TranslatePipe } from './pipes/translate.pipe';
+import { AppRouterModule } from './modules/router/router.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { TranslatePipe } from './pipes/translate.pipe';
     TranslatePipe
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule, AppRouterModule
   ],
   providers: [
     MyDataService, LocalizationService

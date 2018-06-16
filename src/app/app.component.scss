@@ -63,6 +63,13 @@
   }
   .result {
     color: white;
+    .link {
+      color: #BBBBBB;
+      margin: 0 5px;
+    }
+    .link-active {
+      color: deepskyblue;
+    }
   }
   .note {
     color: #81BF23;
