@@ -5,6 +5,9 @@ import { MyComponentComponent } from '../../components/my-component/my-component
 
 const routes: Routes = [
   {
+    path: '', component: MyComponentComponent
+  },
+  {
     path: 'my-component', component: MyComponentComponent
   },
   {

@@ -1,31 +1,41 @@
 <div style="background: #2B2B2B; position: fixed; top: 0; width: 100vw; height: 5px;"></div>
 <div style="border: 1px solid #f00; position: sticky; top: 5px; background: #2B2B2B;">
   <span class="link-source">Source on GitHub: <a href="https://github.com/hsplit/Angular-Notes" target="_blank">https://github.com/hsplit/Angular-Notes</a></span>
-  <h1 style="margin: 0;"><b>Welcome to {{ title }}!</b></h1>
-  <img width="50" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  <div class="part">
-    <label>Read Me<input type="checkbox" #Readme checked></label>
-  </div>
-  <div class="part">
-    <label>Part one <input type="checkbox" #Part1></label>
-  </div>
-  <div class="part">
-    <label>Part two <input type="checkbox" #Part2></label>
-  </div>
-  <div class="part">
-    <label>Part three <input type="checkbox" #Part3></label>
-  </div>
-  <div class="part">
-    <label>Part four <input type="checkbox" #Part4></label>
-  </div>
-  <div class="part">
-    <label>Part five <input type="checkbox" #Part5></label>
-  </div>
-  <div class="part">
-    <label>Part six <input type="checkbox" #Part6></label>
-  </div>
-  <div class="part">
-    <label>Part seven <input type="checkbox" #Part7></label>
+  <h1 style="margin: 0; display: inline-block;"><b>Welcome to {{ title }}!</b></h1>
+  <img width="35" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <div class="parst">
+    <div class="part">
+      <label>Read Me<input type="checkbox" #Readme [(ngModel)]="parts[0]"></label>
+      <a routerLink="/" [queryParams]="{parts: 0}"> only</a>
+    </div>
+    <div class="part">
+      <label>Part one <input type="checkbox" #Part1 [(ngModel)]="parts[1]"></label>
+      <a style="color: #BBBBBB" routerLink="/" [queryParams]="{parts: 1}"> only</a>
+    </div>
+    <div class="part">
+      <label>Part two <input type="checkbox" #Part2 [(ngModel)]="parts[2]"></label>
+      <a style="color: #BBBBBB" routerLink="/" [queryParams]="{parts: 2}"> only</a>
+    </div>
+    <div class="part">
+      <label>Part three <input type="checkbox" #Part3 [(ngModel)]="parts[3]"></label>
+      <a style="color: #BBBBBB" routerLink="/" [queryParams]="{parts: 3}"> only</a>
+    </div>
+    <div class="part">
+      <label>Part four <input type="checkbox" #Part4 [(ngModel)]="parts[4]"></label>
+      <a style="color: #BBBBBB" routerLink="/" [queryParams]="{parts: 4}"> only</a>
+    </div>
+    <div class="part">
+      <label>Part five <input type="checkbox" #Part5 [(ngModel)]="parts[5]"></label>
+      <a style="color: #BBBBBB" routerLink="/" [queryParams]="{parts: 5}"> only</a>
+    </div>
+    <div class="part">
+      <label>Part six <input type="checkbox" #Part6 [(ngModel)]="parts[6]"></label>
+      <a style="color: #BBBBBB" routerLink="/" [queryParams]="{parts: 6}"> only</a>
+    </div>
+    <div class="part">
+      <label>Part seven <input type="checkbox" #Part7 [(ngModel)]="parts[7]"></label>
+      <a style="color: #BBBBBB" routerLink="/" [queryParams]="{parts: 7}"> only</a>
+    </div>
   </div>
 </div>
 <div>
@@ -216,6 +226,7 @@
       <div class="html"><b class="caption">HTML</b> {{ routerHTML }}</div>
       <div class="style"><b class="caption">Style</b> {{ routerStyle }}</div>
       <div class="ts"><b class="caption">TS params</b> {{ routerParams }}</div>
+      <div class="note"><b class="caption">routesQuery</b> {{ routesQuery }}</div>
     </div>
   </div>
 </div>

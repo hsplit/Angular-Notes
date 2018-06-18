@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {MyDataService} from './services/my-data.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,9 @@ export class AppComponent {
   x = 5;
   filter;
 
+  // query routes
+  parts = [true, false, false, false, false, false, false, false];
+
   newTitleApp(str) {
     this.title = str;
   }
@@ -19,12 +23,20 @@ export class AppComponent {
     alert('timeStamp = ' + e.timeStamp);
   }
 
-  constructor(private dataService: MyDataService) {
+  constructor(private dataService: MyDataService, private route: ActivatedRoute) {
     setInterval(() => {
       this.myClassCasino = this.myClassCasino === 'blue-text' ? 'yellow-text' : 'blue-text';
     }, 500);
 
     this.filter = this.dataService.getDafalutFilter();
+
+    this.route.queryParams.subscribe(params => {
+      if (params.parts) {
+        for (let i = 0; i < this.parts.length; i++) {
+          this.parts[i] = params.parts.includes(i);
+        }
+      }
+    });
   }
 
   getAllWords() {
@@ -40,10 +52,6 @@ export class AppComponent {
   getDataHttpObj() {
     return this.dataService.getDataHttpObj();
   }
-
-
-
-
 
 
 
@@ -397,8 +405,8 @@ export class AppComponent {
   ----------------------------------------------------------
   
   item-component
-  constructor(private roure: ActivatedRoute) {
-    this.roure.params.subscribe(params => this.id = params.id);
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => this.id = params.id);
   };
   `;
 
@@ -406,5 +414,9 @@ export class AppComponent {
   .link-active {
     color: deepskyblue;
   }
+  `;
+
+  routesQuery = `
+  this.route.queryParams.subscribe(params => console.log(params));
   `;
 }
