@@ -31,9 +31,9 @@ export class AppComponent {
     this.filter = this.dataService.getDafalutFilter();
 
     this.route.queryParams.subscribe(params => {
-      if (params.parts) {
+      if (params['parts']) {
         for (let i = 0; i < this.parts.length; i++) {
-          this.parts[i] = params.parts.includes(i);
+          this.parts[i] = params['parts'].includes(i);
         }
       }
     });
